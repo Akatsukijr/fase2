@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Arquivo de estilo personalizado -->
+    <title>PetShop</title>
+    <style>
+        .floating-menu {
+            position: fixed;
+            top: 80px; /* Ajuste a posição conforme necessário */
+            right: 10px;
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px;
+        }
+        .floating-menu h5 {
+            margin-bottom: 10px;
+        }
+        .cart-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="images/logo.png" alt="Logo PetShop" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="inicio.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="racoes.html">Rações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="servicos.html">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-2 text-right">
+                    <span id="welcome-message"></span>
+                    <a href="index.html" class="btn btn-primary" id="login-btn">Login</a>
+                    <a href="#" class="btn btn-secondary ml-2" id="logout-btn" style="display: none;">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Destaques -->
+    <div id="destaques" class="container my-5">
+        <div id="carouselDestaques" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselDestaques" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselDestaques" data-slide-to="1"></li>
+                <li data-target="#carouselDestaques" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/capapromo4.png" class="d-block w-100" alt="Promoção 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>CHECK UP PET</h5>
+                        <p>Faça conosco um checkup e cuida da saúde do seu melhor amigo.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/capapromo2.png" class="d-block w-100" alt="Novo Serviço">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Banho e Tosa!</h5>
+                        <p>O Melhor serviço de banho e tosa da cidade!.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/capapromo3.png" class="d-block w-100" alt="Evento Especial">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>Confira as promoções.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselDestaques" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselDestaques" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Breve introdução sobre a PetShop -->
+    <div class="container my-5">
+        <h2 class="text-center">Bem-vindo à PetShop</h2>
+        <p class="text-center">Somos apaixonados por animais e dedicados a oferecer o melhor para o seu pet!</p>
+    </div>
+    
+    <!-- Título da Página -->
+    <div class="container my-5">
+        <h1 class="text-center">Nossos Produtos</h1>
+    </div>
+
+    <!-- Seção de Produtos -->
+    <section class="container my-5">
+        <div class="row">
+            <!-- Produto: Agendamento -->
+            <div class="col-md-12 mb-4">
+                <div class="product-box d-flex align-items-center">
+                    <img src="images/agendamento.png" alt="Agedamento" class="img-fluid product-image">
+                    <div class="product-info ml-3">
+                        <h4>Agendamento de Serviço</h4>
+                        <p>Agende agora o serviço para seu pet.</p>
+                        <a href="agendamento.html" class="btn btn-primary">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: Banho e Tosa -->
+            <div class="col-md-12 mb-4">
+                <div class="product-box d-flex align-items-center">
+                    <img src="images/banhoetosa.jpg" alt="Banho e Tosa" class="img-fluid product-image">
+                    <div class="product-info ml-3">
+                        <h4>Banho e Tosa</h4>
+                        <p>Cuide do seu pet com nosso serviço de banho e tosa de alta qualidade.</p>
+                        <a href="banhoetosa.html" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: Rações -->
+            <div class="col-md-12 mb-4">
+                <div class="product-box d-flex align-items-center">
+                    <img src="images/racaopet.png" alt="Rações" class="img-fluid product-image">
+                    <div class="product-info ml-3">
+                        <h4>Rações</h4>
+                        <p>Oferecemos uma ampla variedade de rações para seu pet.</p>
+                        <a href="racoes.html" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto: Ebook de Tratamento com Pets -->
+            <div class="col-md-12 mb-4">
+                <div class="product-box d-flex align-items-center">
+                    <img src="images/ebookpet.png" alt="Ebook de Tratamento com Pets" class="img-fluid product-image">
+                    <div class="product-info ml-3">
+                        <h4>Ebook de Tratamento com Pets</h4>
+                        <p>Baixe nosso ebook com dicas valiosas para o tratamento de pets.</p>
+                        <a href="ebooks.html" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <div class="container">
+        <h2 class="text-center">Nossos Serviços</h2>
+        <p class="text-center">Oferecemos uma variedade de serviços para cuidar do seu pet.</p>
+        <ul class="list-unstyled">
+            <li>Banho e Tosa</li>
+            <li>Veterinário</li>
+            <li>Venda de Rações e Acessórios</li>
+        </ul>
+    </div>
+    <div class="floating-menu">
+        <h5>Carrinho de Compras</h5>
+        <p>Itens: <span id="itemCount">0</span></p>
+        <button class="btn btn-primary cart-button" onclick="viewCart()">Ver Carrinho</button>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <p class="text-center">© 2024 PetShop - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script> <!-- Script personalizado -->
+
+    <script>
+        // Função para atualizar a mensagem de boas-vindas
+        function updateWelcomeMessage() {
+            const loggedIn = localStorage.getItem('loggedIn');
+            const currentUser = localStorage.getItem('currentUser');
+            const welcomeMessage = document.getElementById('welcome-message');
+            const loginBtn = document.getElementById('login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+
+            if (loggedIn === 'true' && currentUser) {
+                welcomeMessage.innerText = `Bem-vindo, ${currentUser}!`;
+                loginBtn.style.display = 'none'; // Oculta o botão de login se o usuário estiver logado
+                logoutBtn.style.display = 'inline-block'; // Mostra o botão de logout
+            } else {
+                welcomeMessage.innerText = '';
+                loginBtn.style.display = 'block'; // Mostra o botão de login se o usuário não estiver logado
+                logoutBtn.style.display = 'none'; // Oculta o botão de logout
+            }
+        }
+
+        // Função para adicionar um item ao carrinho
+        function addToCart(itemName, price) {
+            let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+            cart.push({ servico: itemName, preco: price });
+            localStorage.setItem('carrinho', JSON.stringify(cart));
+            updateCartCount(); // Atualiza a quantidade de itens no carrinho
+            alert(itemName + ' foi adicionado ao carrinho!');
+        }
+
+        // Função para atualizar o número de itens no carrinho
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+            let itemCount = cart.length;
+            document.getElementById('itemCount').innerText = itemCount;
+        }
+
+        // Função para visualizar o carrinho
+        function viewCart() {
+            window.location.href = 'carrinho.html'; // Redireciona para a página de carrinho
+        }
+
+        // Função para deslogar
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('currentUser');
+            updateWelcomeMessage(); // Atualiza a interface para refletir o estado deslogado
+        }
+
+        // Atualiza o número de itens no carrinho e a mensagem de boas-vindas ao carregar a página
+        window.onload = function() {
+            updateCartCount();
+            updateWelcomeMessage();
+        };
+
+        // Adiciona o evento de click ao botão de logout
+        document.getElementById('logout-btn').addEventListener('click', logout);
+    </script>
+
+</body>
+</html>

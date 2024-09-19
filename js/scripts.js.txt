@@ -1,0 +1,12 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll('.carousel-item');
+
+    // Adicionar animação de destaque nas promoções
+    items.forEach((item, index) => {
+        if (index === 0) { // Destaque o primeiro item como uma promoção
+            setTimeout(() => {
+                item.classList.add('promocao');
+            }, 2000); // Destaca após 2 segundos
+        }
+    });
+});

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Arquivo de estilo personalizado -->
+    <title>Cadastro - PetShop</title>
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="images/logo.png" alt="Logo PetShop" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="inicio.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="racoes.html">Rações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="servicos.html">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <div class="container my-5">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Cadastro de Cliente e Pet</h2>
+            <form id="registration-form">
+                <!-- Cadastro do Cliente -->
+                <h4>Informações do Cliente</h4>
+                <div class="form-group">
+                    <label for="clientName">Nome:</label>
+                    <input type="text" class="form-control" id="clientName" name="clientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientAddress">Endereço:</label>
+                    <input type="text" class="form-control" id="clientAddress" name="clientAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Telefone:</label>
+                    <input type="tel" class="form-control" id="clientPhone" name="clientPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">E-mail:</label>
+                    <input type="email" class="form-control" id="clientEmail" name="clientEmail" required>
+                </div>
+
+                <!-- Cadastro do Pet -->
+                <h4>Informações do Pet</h4>
+                <div class="form-group">
+                    <label for="petName">Nome do Pet:</label>
+                    <input type="text" class="form-control" id="petName" name="petName" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo do Pet:</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="petType" id="petType1" value="Cachorro" required>
+                        <label class="form-check-label" for="petType1">Cachorro</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="petType" id="petType2" value="Gato" required>
+                        <label class="form-check-label" for="petType2">Gato</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="petType" id="petType3" value="Outro" required>
+                        <label class="form-check-label" for="petType3">Outro</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="petBreed">Raça:</label>
+                    <input type="text" class="form-control" id="petBreed" name="petBreed" required>
+                </div>
+                <div class="form-group">
+                    <label>Temperamento:</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="petTemperament" id="temperament1" value="Dócil" required>
+                        <label class="form-check-label" for="temperament1">Dócil</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="petTemperament" id="temperament2" value="Neutro" required>
+                        <label class="form-check-label" for="temperament2">Neutro</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="petTemperament" id="temperament3" value="Bravo" required>
+                        <label class="form-check-label" for="temperament3">Bravo</label>
+                    </div>
+                </div>
+                
+                <!-- Opções de Serviço -->
+                <h4>Serviço Desejado</h4>
+                <div class="form-group">
+                    <label for="serviceOptions">Escolha um Serviço:</label>
+                    <select class="form-control" id="serviceOptions" name="serviceOptions" required>
+                        <option value="Banho e Tosa Higienica" data-price="60">Banho e Tosa Higienica - R$60</option>
+                        <option value="Consulta Veterinária" data-price="150">Consulta Veterinária - R$150</option>
+                        <option value="Adestramento de Um Mês" data-price="5000">Adestramento de Um Mês - R$5000</option>
+                    </select>
+                </div>
+
+                <!-- Data e Horário -->
+                <div class="form-group">
+                    <label for="appointmentDate">Data do Agendamento:</label>
+                    <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentTime">Horário:</label>
+                    <input type="time" class="form-control" id="appointmentTime" name="appointmentTime" required>
+                </div>
+
+                <!-- Adicionar ao Carrinho -->
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="addToCart()">Adicionar ao Carrinho</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <p class="text-center">© 2024 PetShop - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para adicionar o item ao carrinho
+        function addToCart() {
+            // Obtém os valores dos campos do formulário
+            const petName = document.getElementById('petName').value;
+            const serviceOptions = document.getElementById('serviceOptions');
+            const selectedService = serviceOptions.options[serviceOptions.selectedIndex].text;
+            const itemPrice = parseFloat(serviceOptions.options[serviceOptions.selectedIndex].getAttribute('data-price'));
+
+            // Verifica se os valores são válidos
+            if (petName && !isNaN(itemPrice) && itemPrice > 0) {
+                // Adiciona o item ao carrinho
+                let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+                cart.push({ servico: selectedService, preco: itemPrice });
+                localStorage.setItem('carrinho', JSON.stringify(cart));
+
+                // Alerta e atualiza o carrinho
+                alert(`${petName} - ${selectedService} foi adicionado ao carrinho!`);
+                window.location.href = 'carrinho.html'; // Redireciona para a página do carrinho
+            } else {
+                alert('Por favor, preencha todos os campos corretamente.');
+            }
+        }
+    </script>
+</body>
+</html>

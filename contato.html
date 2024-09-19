@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Arquivo de estilo personalizado -->
+    <title>PetShop</title>
+    <style>
+        .floating-menu {
+            position: fixed;
+            top: 80px; /* Ajuste a posição para baixo do cabeçalho */
+            right: 10px;
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px;
+        }
+        .floating-menu h5 {
+            margin-bottom: 10px;
+        }
+        .cart-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="images/logo.png" alt="Logo PetShop" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="inicio.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="racoes.html">Rações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="servicos.html">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-2 text-right">
+                    <span id="welcome-message"></span>
+                    <a href="index.html" class="btn btn-primary" id="login-btn">Login</a>
+                    <a href="#" class="btn btn-secondary ml-2" id="logout-btn" style="display: none;">Logout</a>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Título da Página -->
+    <div class="container my-5">
+        <h1 class="text-center">Entre em Contato Conosco</h1>
+        <p class="text-center">Estamos aqui para ajudar! Preencha o formulário abaixo ou entre em contato através das informações fornecidas.</p>
+    </div>
+
+    <!-- Seção de Contato -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Formulário de Contato</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Informações de Contato</h2>
+                <p><strong>Telefone:</strong> (11) 1234-5678</p>
+                <p><strong>E-mail:</strong> contato@petshop.com.br</p>
+                <p><strong>Endereço:</strong> Rua dos Animais, 123 - São Paulo, SP</p>
+                <h3>Localização</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9000000000004!2d-46.65599968445957!3d-23.55052058468145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b3e4c4c5b7%3A0x4e1e4c5c5c5c5c5!2sPetShop!5e0!3m2!1spt-BR!2sbr!4v1610000000000!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="text-center">Nossos Serviços</h2>
+        <p class="text-center">Oferecemos uma variedade de serviços para cuidar do seu pet.</p>
+        <ul class="list-unstyled">
+            <li>Banho e Tosa</li>
+            <li>Veterinário</li>
+            <li>Venda de Rações e Acessórios</li>
+        </ul>
+    </div>
+
+    <!-- Menu Flutuante -->
+    <div class="floating-menu">
+        <h5>Carrinho de Compras</h5>
+        <p>Itens: <span id="itemCount">0</span></p>
+        <button class="btn btn-primary cart-button" onclick="viewCart()">Ver Carrinho</button>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <p class="text-center">© 2024 PetShop - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Verifica se o usuário está logado e exibe a mensagem de "Bem-vindo"
+        function updateWelcomeMessage() {
+            const loggedIn = localStorage.getItem('loggedIn');
+            const currentUser = localStorage.getItem('currentUser');
+            const welcomeMessage = document.getElementById('welcome-message');
+            const loginBtn = document.getElementById('login-btn');
+    
+            if (loggedIn === 'true' && currentUser) {
+                welcomeMessage.innerText = `Bem-vindo, ${currentUser}!`;
+                loginBtn.style.display = 'none'; // Oculta o botão de login se o usuário estiver logado
+            } else {
+                welcomeMessage.innerText = '';
+                loginBtn.style.display = 'block'; // Mostra o botão de login se o usuário não estiver logado
+            }
+        }
+    
+        // Executa a função ao carregar a página
+        window.onload = updateWelcomeMessage;
+    </script>
+    
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script> <!-- Script personalizado -->
+
+<script>
+    // Função para atualizar a mensagem de boas-vindas
+    function updateWelcomeMessage() {
+        const loggedIn = localStorage.getItem('loggedIn');
+        const currentUser = localStorage.getItem('currentUser');
+        const welcomeMessage = document.getElementById('welcome-message');
+        const loginBtn = document.getElementById('login-btn');
+
+        if (loggedIn === 'true' && currentUser) {
+            welcomeMessage.innerText = `Bem-vindo, ${currentUser}!`;
+            loginBtn.style.display = 'none'; // Oculta o botão de login se o usuário estiver logado
+        } else {
+            welcomeMessage.innerText = '';
+            loginBtn.style.display = 'block'; // Mostra o botão de login se o usuário não estiver logado
+        }
+    }
+
+    // Função para adicionar um item ao carrinho
+    function addToCart(itemName, price) {
+        let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+        cart.push({ servico: itemName, preco: price });
+        localStorage.setItem('carrinho', JSON.stringify(cart));
+        updateCartCount(); // Atualiza a quantidade de itens no carrinho
+        alert(itemName + ' foi adicionado ao carrinho!');
+    }
+
+    // Função para atualizar o número de itens no carrinho
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let itemCount = cart.length;
+        document.getElementById('itemCount').innerText = itemCount;
+    }
+
+    // Função para visualizar o carrinho
+    function viewCart() {
+        window.location.href = 'carrinho.html'; // Redireciona para a página de carrinho
+    }
+
+    // Atualiza o número de itens no carrinho e a mensagem de boas-vindas ao carregar a página
+    window.onload = function() {
+        updateCartCount();
+        updateWelcomeMessage();
+    };
+
+</script>
+
+</body>
+</html>

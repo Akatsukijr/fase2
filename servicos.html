@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Arquivo de estilo personalizado -->
+    <title>PetShop</title>
+    <style>
+        .floating-menu {
+            position: fixed;
+            top: 80px; /* Ajuste a posição para baixo do cabeçalho */
+            right: 10px;
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px;
+        }
+        .floating-menu h5 {
+            margin-bottom: 10px;
+        }
+        .cart-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="images/logo.png" alt="Logo PetShop" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="inicio.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="racoes.html">Rações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="servicos.html">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-2 text-right">
+                    <span id="welcome-message"></span>
+                    <a href="login.html" class="btn btn-primary" id="login-btn">Login</a>
+                    <a href="#" class="btn btn-secondary ml-2" id="logout-btn" style="display: none;">Logout</a>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Serviços -->
+    <section class="container my-5">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Banho e Tosa</h5>
+                <p class="card-text">Oferecemos serviços de banho e tosa para que seu pet fique sempre limpo e bem cuidado.</p>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Produtos de Higiene</h5>
+                <p class="card-text">Disponibilizamos uma variedade de produtos de higiene para manter seu pet saudável e cheiroso.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Brinquedos de Pet</h5>
+                <p class="card-text">Temos uma seleção incrível de brinquedos para divertir e entreter seu amigo de quatro patas.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Alimentos de Pet</h5>
+                <p class="card-text">Oferecemos alimentos de alta qualidade para todos os tipos de pets, adequados às suas necessidades nutricionais.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Livros sobre Pet</h5>
+                <p class="card-text">Encontre livros que ajudam a entender melhor o comportamento e os cuidados com seu pet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Flutuante -->
+    <div class="floating-menu">
+        <h5>Carrinho de Compras</h5>
+        <p>Itens: <span id="itemCount">0</span></p>
+        <button class="btn btn-primary cart-button" onclick="viewCart()">Ver Carrinho</button>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <p class="text-center">© 2024 PetShop - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script> <!-- Script personalizado -->
+
+<script>
+    // Função para atualizar a mensagem de boas-vindas
+    function updateWelcomeMessage() {
+        const loggedIn = localStorage.getItem('loggedIn');
+        const currentUser = localStorage.getItem('currentUser');
+        const welcomeMessage = document.getElementById('welcome-message');
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        if (loggedIn === 'true' && currentUser) {
+            welcomeMessage.innerText = `Bem-vindo, ${currentUser}!`;
+            loginBtn.style.display = 'none'; // Oculta o botão de login se o usuário estiver logado
+            logoutBtn.style.display = 'inline-block'; // Mostra o botão de logout
+        } else {
+            welcomeMessage.innerText = '';
+            loginBtn.style.display = 'block'; // Mostra o botão de login se o usuário não estiver logado
+            logoutBtn.style.display = 'none'; // Oculta o botão de logout
+        }
+    }
+
+    // Função para deslogar
+    function logout() {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('currentUser');
+        updateWelcomeMessage(); // Atualiza a interface para refletir o estado deslogado
+    }
+
+    // Atualiza a mensagem de boas-vindas ao carregar a página
+    window.onload = function() {
+        updateWelcomeMessage();
+    };
+
+    // Adiciona o evento de click ao botão de logout
+    document.getElementById('logout-btn').addEventListener('click', logout);
+</script>
+
+</body>
+</html>

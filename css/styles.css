@@ -1,0 +1,124 @@
+header {
+    background-image: url('../images/menu.png'); /* Caminho da imagem */
+    background-size: cover; /* Faz com que a imagem cubra todo o cabeçalho */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    padding: 20px 0; /* Espaçamento interno no cabeçalho */
+    min-height: 100px; /* Define uma altura mínima para o cabeçalho */
+}
+h1, h2 {
+    color: #000000; /* Cor do texto */
+}
+
+.card {
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+}
+
+.bg-light {
+    background-color: #c1d9f0 !important; /* Cor de fundo */
+}
+.product-box {
+    border: 1px solid #dddddd;
+    border-radius: .25rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.product-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h4 {
+    margin-top: 0;
+}
+
+.product-info p {
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+}
+
+#destaques {
+    margin-bottom: 50px;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #fff;
+}
+body {
+    background-color: #8b8bf1; /* Cor lilás claro */
+}
+
+
+.product-box {
+    background-color: white; /* Cor de fundo da caixa */
+    border: 1px solid #ccc; /* Borda da caixa */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    position: relative; /* Para posicionar a imagem de fundo */
+    overflow: hidden; /* Para evitar que a imagem de fundo ultrapasse a caixa */
+}
+
+.product-box::before {
+    content: "";
+    background-image: url('../images/fundomenu3.png'); /* Imagem de fundo */
+    background-size: cover; /* Cobre toda a área da caixa */
+    position: absolute; /* Posiciona a imagem de fundo */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1; /* Ajusta a opacidade da imagem de fundo */
+    z-index: 0; /* Coloca a imagem atrás do conteúdo */
+}
+
+.product-info {
+    position: relative; /* Para que o texto fique acima da imagem de fundo */
+    z-index: 1; /* Coloca o texto acima da imagem de fundo */
+}
+/*
+Banho e tosa
+*/
+
+.site-header {
+    background-color: #f8f9fa; /* Cor de fundo do cabeçalho */
+    text-align: center;
+    padding: 20px;
+}
+
+.service-box, .appointment-box {
+    background-color: #ffffff; /* Cor de fundo das caixas */
+    border: 1px solid #ccc; /* Borda das caixas */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}

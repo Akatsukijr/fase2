@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Estilos personalizados -->
+    <title>Produtos - PetShop</title>
+</head>
+<body>
+    <!-- Cabeçalho reutilizado -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo da PetShop -->
+                <div class="col-md-4">
+                    <img src="images/logo.png" alt="Logo PetShop" class="img-fluid">
+                </div>
+                
+                <!-- Links de Navegação -->
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-primary font-weight-bold mr-2" href="racoes.html">Rações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="servicos.html">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+    
+                <!-- Botão de Cadastro/Login -->
+                <div class="col-md-2 text-right">
+                    <a href="#cadastro" class="btn btn-primary">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Conteúdo específico de produtos -->
+    <section id="produtos" class="container my-5">
+        <h2 class="text-center mb-4">Nossos Produtos</h2>
+        
+        <!-- Carrossel de Produtos -->
+        <div id="carrosselProdutos" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/racao.png.png" class="d-block w-100" alt="Ração para Cães">
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Ração para Cães</h3>
+                            <p>Descrição: Alimento completo para cães de todas as raças.</p>
+                            <p>Preço: R$ 120,00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Outros produtos... -->
+            </div>
+
+            <!-- Controles do carrossel -->
+            <a class="carousel-control-prev" href="#carrosselProdutos" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carrosselProdutos" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé reutilizado -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <p class="text-center">© 2024 PetShop - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script> <!-- Script personalizado -->
+    <script>
+        let itemCount = 0;
+
+        function addToCart() {
+            itemCount++;
+            document.getElementById('itemCount').innerText = itemCount;
+            alert('Produto adicionado ao carrinho!');
+        }
+
+        function viewCart() {
+            window.location.href = 'carrinho.html'; // Redireciona para a página de checkout
+        }
+        
+    </script>
+</body>
+</body>
+</html>
